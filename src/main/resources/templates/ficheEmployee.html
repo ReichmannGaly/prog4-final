@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="eng">
+<head>
+    <title>Fiche employé</title>
+    <style>
+
+        .container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .image,
+        .details {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .image img {
+            border-radius: 30px;
+        }
+
+        .details {
+            margin-left: 135px;
+            padding: 20px;
+            text-align: right;
+            font-size: 20px;
+        }
+
+        .salary {
+            margin-top: 75px;
+            margin-left: 50px;
+        }
+
+        .footer {
+            margin-top: 265px;
+            font-size: 15px;
+        }
+
+        .footer-logo, .conf, .conf2{
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>FICHE EMPLOYÉ</h2>
+</div>
+
+<div class="image">
+    <img width="215" height="250" th:src="${image}" alt="Aucune image"></img>
+</div>
+<div class="details">
+    <p><strong>Numéro matricule:</strong> <span th:text="' ' + ${employee.ref}"></span></p>
+    <p><strong>Noms:</strong> <span th:text="' ' + ${employee.lastName}"></span></p>
+    <p><strong>Prénoms:</strong> <span th:text="' ' + ${employee.firstName}"></span></p>
+    <p><strong>Age:</strong> <span th:text="' ' + ${age}"></span></p>
+    <p><strong>Date d'embauche: </strong> <span th:text="' ' + ${employee.hireDate}"></span></p>
+    <p><strong>Date de départ: </strong> <span th:text="' ' + ${employee.resignationDate}"></span></p>
+    <p><strong>Numéro CNAPS: </strong> <span th:text="' ' + ${employee.CNAPSNumber}"></span></p>
+</div>
+
+<div class="salary" style="font-size: 20px">
+    <p>Informations sur le salaire</p>
+    <p><strong>Salaire brut actuel: </strong> <span th:text="' ' + ${employee.salary} + ' / mois'"></span></p>
+</div>
+
+<div class="footer">
+    <hr></hr>
+
+    <div class="footer-logo" style="margin-right: 15px">
+        <img width="115" height="150" th:src="${logo}" alt="Logo"></img>
+    </div>
+
+    <div class="conf" style="margin-right: 15px">
+        <p th:text="${conf.name}"></p>
+        <p><strong>NIF: </strong> <span th:text="' ' + ${conf.nif}"></span></p>
+        <p><strong>STAT: </strong> <span th:text="' ' + ${conf.stat}"></span></p>
+    </div>
+
+    <div class="conf2">
+        <p><strong>Adresse de l'entreprise: </strong> <span th:text="' ' + ${conf.address}"></span></p>
+        <p><strong>Télephone: </strong> <span th:text="' ' + ${companyPhone}"></span></p>
+        <p><strong>Email: </strong> <span th:text="' ' + ${conf.contactEmail}"></span></p>
+    </div>
+</div>
+</body>
+</html>

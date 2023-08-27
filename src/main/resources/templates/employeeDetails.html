@@ -289,7 +289,7 @@
             </div>
 
             <div class="centered-link">
-                <a class="return-button" th:href="@{/}">Return to employees list</a>
+                <a class="return-button" th:href="@{/employees/{id}/generate-pdf(id=${employee.id})}">Générer PDF</a>
             </div>
         </div>
     </body>
