@@ -34,5 +34,6 @@ public class CreateEmployeeModel {
     private LocalDate hireDate;
     private LocalDate resignationDate;
     private String CNAPSNumber;
+    private Long salary;
     private MultipartFile image;
 }

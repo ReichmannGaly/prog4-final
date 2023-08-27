@@ -32,5 +32,6 @@ public class EmployeeModel {
     private String CNAPSNumber;
     private String ref;
     private String image;
+    private Long salary;
     private MultipartFile updateImage;
 }

@@ -31,6 +31,7 @@ public class UpdateEmployeeModel {
     private LocalDate resignationDate;
     private String CNAPSNumber;
     private String ref;
+    private Long salary;
     private String image;
     private MultipartFile updateImage;
 }

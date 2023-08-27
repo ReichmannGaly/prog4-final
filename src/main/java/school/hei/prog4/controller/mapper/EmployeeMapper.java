@@ -40,6 +40,7 @@ public class EmployeeMapper {
                 .resignationDate(model.getResignationDate())
                 .CNAPSNumber(model.getCNAPSNumber())
                 .ref("EMP-" + String.format("%03d", employees.size() + 1))
+                .salary(model.getSalary())
                 .image(model.getImage().getBytes())
                 .build();
     }
@@ -73,6 +74,7 @@ public class EmployeeMapper {
                 .hireDate(model.getHireDate())
                 .resignationDate(model.getResignationDate())
                 .CNAPSNumber(model.getCNAPSNumber())
+                .salary(model.getSalary())
                 .ref(model.getRef())
                 .image(image)
                 .build();
@@ -100,6 +102,7 @@ public class EmployeeMapper {
                 .resignationDate(entity.getResignationDate())
                 .CNAPSNumber(entity.getCNAPSNumber())
                 .ref(entity.getRef())
+                .salary(entity.getSalary())
                 .image("data:image/png;base64," + Base64.encodeBase64String(entity.getImage()))
                 .build();
     }
@@ -126,6 +129,7 @@ public class EmployeeMapper {
                 .resignationDate(entity.getResignationDate())
                 .CNAPSNumber(entity.getCNAPSNumber())
                 .ref(entity.getRef())
+                .salary(entity.getSalary())
                 .image("data:image/png;base64," + Base64.encodeBase64String(entity.getImage()))
                 .build();
     }

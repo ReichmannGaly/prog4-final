@@ -236,6 +236,19 @@
                     </div>
 
                     <div class="formbold-mb-3">
+                        <label for="salary" class="formbold-form-label">Salaire brut par mois</label>
+                        <input
+                                type="text"
+                                id="salary"
+                                name="salary"
+                                th:field="*{salary}"
+                                placeholder="Salaire brut par mois"
+                                class="formbold-form-input"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
                         <label for="image" class="formbold-form-label">Photo d'identité</label>
                         <input
                                 class="formbold-form-input formbold-form-file"

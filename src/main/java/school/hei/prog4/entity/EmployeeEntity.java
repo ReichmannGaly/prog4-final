@@ -72,6 +72,8 @@ public class EmployeeEntity implements Serializable {
 
     private String ref;
 
+    private long salary;
+
     private byte[] image;
 
     public enum Gender {
