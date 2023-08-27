@@ -1,0 +1,278 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+.d-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    height: 70%;
+}
+
+.image-container {
+    flex: 0 0 40%;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    height: 85%;
+    width: 5%;
+}
+
+.image-container img {
+    width: 75%;
+    height: 100%;
+    margin-right: 0;
+    border-radius: 25%;
+    float: right;
+}
+
+.info-container {
+    height: inherit;
+    overflow: auto;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+.attr {
+    font-size: 25px;
+    font-weight: 1;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.centered-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.return-button {
+    appearance: none;
+    background-color: #009879;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-top: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+.formbold-mb-3 {
+    margin-bottom: 15px;
+}
+.formbold-relative {
+    position: relative;
+}
+.formbold-opacity-0 {
+    opacity: 0;
+}
+.formbold-stroke-current {
+    stroke: #ffffff;
+    z-index: 999;
+}
+#supportCheckbox:checked ~ div span {
+    opacity: 1;
+}
+#supportCheckbox:checked ~ div {
+    background: #6a64f1;
+    border-color: #6a64f1;
+}
+
+.formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+
+.formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 570px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+}
+
+.formbold-img {
+    display: block;
+    margin: 0 auto 45px;
+}
+
+.formbold-input-wrapp > div {
+    display: flex;
+    gap: 20px;
+}
+
+.formbold-input-flex {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+.formbold-input-flex > div {
+    width: 50%;
+}
+.formbold-form-input {
+    width: 100%;
+    padding: 13px 22px;
+    border-radius: 5px;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    color: #536387;
+    outline: none;
+    resize: none;
+}
+.formbold-form-input::placeholder,
+select.formbold-form-input,
+.formbold-form-input[type='date']::-webkit-datetime-edit-text,
+.formbold-form-input[type='date']::-webkit-datetime-edit-month-field,
+.formbold-form-input[type='date']::-webkit-datetime-edit-day-field,
+.formbold-form-input[type='date']::-webkit-datetime-edit-year-field {
+    color: rgba(83, 99, 135, 0.5);
+}
+
+.formbold-form-input:focus {
+    border-color: #009879;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+.formbold-form-label {
+    color: #536387;
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formbold-form-file {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(83, 99, 135, 0.5);
+}
+.formbold-form-file::-webkit-file-upload-button {
+    display: none;
+}
+.formbold-form-file:before {
+    content: 'Upload';
+    display: inline-block;
+    background: #EEEEEE;
+    border: 0.5px solid #E7E7E7;
+    border-radius: 3px;
+    padding: 3px 12px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    color: #637381;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 10px;
+}
+
+.formbold-btn {
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #009879;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+}
+.formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    background-color: #057a64;
+}
+
+.formbold-w-45 {
+    width: 45%;
+}
+
+form {
+    margin-bottom: 50px;
+}
+
+.employees-link {
+    text-align: center;
+}
+
+.add-button-container {
+    text-align: center;
+}
+
+.phone-inputs {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.phone-inputs input {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.phone-inputs button {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.phone-inputs button {
+    background: none;
+    border: none;
+    color: rgba(253, 95, 118, 0.82);
+    cursor: pointer;
+}
+
+.add-input-btn {
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #009879;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+}
+.add-input-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    background-color: #057a64;
+}

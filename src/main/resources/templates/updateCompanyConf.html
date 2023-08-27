@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company configurations</title>
+    <link rel="stylesheet" type="text/css" href="/css/updateCompanyConf.css"/>
+</head>
+<body>
+    <div class="header-container" th:replace="fragments/header"></div>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form
+                    th:object="${company}"
+                    th:action="@{/updateCompanyConf}"
+                    method="post" enctype="multipart/form-data">
+                <div class="formbold-mb-3">
+                    <label for="companyName" class="formbold-form-label"> Nom de l'entreprise </label>
+                    <input
+                            type="text"
+                            id="companyName"
+                            name="companyName"
+                            th:field="*{name}"
+                            placeholder="Nom de l'entreprise"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="description" class="formbold-form-label"> Description </label>
+                    <input
+                            type="text"
+                            id="description"
+                            name="description"
+                            th:field="*{description}"
+                            placeholder="Description"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="slogan" class="formbold-form-label"> Slogan </label>
+                    <input
+                            type="text"
+                            id="slogan"
+                            name="slogan"
+                            th:field="*{slogan}"
+                            placeholder="Slogan"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="address" class="formbold-form-label"> Adresse </label>
+                    <input
+                            type="text"
+                            id="address"
+                            name="slogan"
+                            th:field="*{address}"
+                            placeholder="Adresse"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="contactEmail" class="formbold-form-label"> Email de contact </label>
+                    <input
+                            type="text"
+                            id="contactEmail"
+                            name="contactEmail"
+                            th:field="*{contactEmail}"
+                            placeholder="Email de contact"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+
+                <div class="formbold-input-wrapp formbold-mb-3">
+                    <label for="phoneNumber" class="formbold-form-label">Numéro de téléphone</label>
+                    <div class="formbold-flex-container">
+                        <select class="formbold-form-input" name="codePays" id="codePays">
+                            <option value="MDG" th:selected="${codePays == 'MDG'}">Madagascar (+261)</option>
+                            <option value="FR" th:selected="${codePays == 'FR'}">France (+33)</option>
+                        </select>
+
+                        <input
+                                type="text"
+                                id="phoneNumber"
+                                name="phoneNumber"
+                                placeholder="Numéro de téléphone"
+                                th:value="${phoneNumber}"
+                                class="formbold-form-input"
+                                required
+                                maxlength="10"
+                        />
+                    </div>
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="nif" class="formbold-form-label"> NIF de l'entreprise</label>
+                    <input
+                            type="text"
+                            id="nif"
+                            name="nif"
+                            th:field="*{nif}"
+                            placeholder="NIF"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+
+                <div class="formbold-mb-3">
+                    <label for="rcs" class="formbold-form-label"> RCS de l'entreprise </label>
+                    <input
+                            type="text"
+                            id="rcs"
+                            name="rcs"
+                            th:field="*{rcs}"
+                            placeholder="RCS"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+                <div class="formbold-mb-3">
+                    <label for="stat" class="formbold-form-label"> STAT </label>
+                    <input
+                            type="text"
+                            id="stat"
+                            name="stat"
+                            th:field="*{stat}"
+                            placeholder="STAT"
+                            class="formbold-form-input"
+                            required
+                    />
+                </div>
+                <div class="formbold-mb-3">
+                    <label for="newLogo" class="formbold-form-label">Nouveau logo</label>
+                    <input
+                            class="formbold-form-input formbold-form-file"
+                            type="file"
+                            id="newLogo"
+                            name="newLogo"
+                            accept="image/*"
+                    />
+                </div>
+
+                <div class="add-button-container">
+                    <button class="formbold-btn" type="submit">Mettre à jour</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/css/header.css"/>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <a th:href="@{/}">
+                <img
+                        th:src="${logo != null} ? ${logo} : 'http://via.placeholder.com/400'"
+                        alt="Logo" />
+            </a>
+            <h1><a th:href="@{/}" th:text="${company.name}"></a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a th:href="@{/}">Acceuil</a></li>
+                <li><a th:href="@{/addEmployee}">Ajouter</a></li>
+                <li><a th:href="@{/updateCompanyConf}">Configurations</a></li>
+                <li><a th:href="@{/logOut}">Se déconnecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>

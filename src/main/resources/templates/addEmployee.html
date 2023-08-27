@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Employee</title>
+        <link rel="stylesheet" type="text/css" href="/css/addEmployee.css" />
+    </head>
+    <body>
+        <div class="header-container" th:replace="fragments/header"></div>
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+                <form th:action="@{/addEmployee}" th:object="${newEmployee}" method="post" enctype="multipart/form-data">
+                    <div class="formbold-input-wrapp formbold-mb-3">
+                        <label for="firstname" class="formbold-form-label"> Noms </label>
+                        <div>
+                            <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    th:field="*{firstName}"
+                                    placeholder="Prénoms"
+                                    class="formbold-form-input"
+                                    required
+                            />
+
+                            <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    th:field="*{lastName}"
+                                    placeholder="Nom"
+                                    class="formbold-form-input"
+                                    required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="birthDate" class="formbold-form-label"> Date de naissance </label>
+                        <input
+                                type="date"
+                                name="birthDate"
+                                id="birthDate"
+                                class="formbold-form-input"
+                                th:field="*{birthDate}"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="gender" class="formbold-form-label">Sexe</label>
+                        <select class="formbold-form-input" name="gender" id="gender" th:field="*{gender}">
+                            <option value="none" selected>Selectionnez une option</option>
+                            <option value="H">Homme</option>
+                            <option value="F">Femme</option>
+                        </select>
+                    </div>
+
+                    <div class="formbold-input-wrapp formbold-mb-3">
+                        <label for="personalEmail" class="formbold-form-label">Emails</label>
+                        <div>
+                            <input
+                                    type="text"
+                                    id="personalEmail"
+                                    name="personalEmail"
+                                    th:field="*{personalEmail}"
+                                    placeholder="Email personnel"
+                                    class="formbold-form-input"
+                                    required
+                            />
+
+                            <input
+                                    type="text"
+                                    id="professionalEmail"
+                                    name="professionalEmail"
+                                    th:field="*{professionalEmail}"
+                                    placeholder="Email professionnel"
+                                    class="formbold-form-input"
+                                    required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="address" class="formbold-form-label">Adresse</label>
+                        <input
+                                type="text"
+                                id="address"
+                                name="adress"
+                                th:field="*{address}"
+                                placeholder="Adresse"
+                                class="formbold-form-input"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-input-wrapp formbold-mb-3">
+                        <label for="phoneNumber" class="formbold-form-label">Numéro de téléphone</label>
+                        <div class="formbold-flex-container">
+                            <select class="formbold-form-input" name="codePays" id="codePays" th:field="*{codePays}">
+                                <option value="MDG">Madagascar (+261)</option>
+                                <option value="FR">France (+33)</option>
+                            </select>
+
+                            <input
+                                    type="text"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    placeholder="Numéro de téléphone"
+                                    class="formbold-form-input"
+                                    required
+                                    th:field="*{phoneNumber}"
+                                    maxlength="10"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="IDCardNumber" class="formbold-form-label">Numéro CIN</label>
+                        <input
+                                type="text"
+                                id="IDCardNumber"
+                                name="IDCardNumber"
+                                th:field="*{IDCardNumber}"
+                                placeholder="Numéro CIN"
+                                class="formbold-form-input"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="IDCardIssuePlace" class="formbold-form-label">Lieu de délivrance CIN</label>
+                        <input
+                                type="text"
+                                id="IDCardIssuePlace"
+                                name="IDCardIssuePlace"
+                                th:field="*{IDCardIssuePlace}"
+                                placeholder="Lieu de délivrance CIN"
+                                class="formbold-form-input"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="IDCardIssueDate" class="formbold-form-label">Date de délivrance CIN</label>
+                        <input
+                                type="date"
+                                name="IDCardIssueDate"
+                                id="IDCardIssueDate"
+                                class="formbold-form-input"
+                                th:field="*{IDCardIssueDate}"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="childrenNumber" class="formbold-form-label">Nombre d'enfants</label>
+                        <input
+                                type="number"
+                                name="childrenNumber"
+                                id="childrenNumber"
+                                placeholder="Nombre d'enfants"
+                                th:field="*{childrenNumber}"
+                                class="formbold-form-input"
+                                required
+                                min="0"
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="socioProfessionalCategory" class="formbold-form-label">Catégorie socio-professionnelle(CSP)</label>
+                        <select
+                                class="formbold-form-input"
+                                name="socioProfessionalCategory"
+                                id="socioProfessionalCategory"
+                                th:field="*{socioProfessionalCategory}">
+                            <option value="none" selected>Sélectionnez le CSP</option>
+                            <option value="M1">M1</option>
+                            <option value="M2">M2</option>
+                            <option value="OS1">OS1</option>
+                            <option value="OS2">OS2</option>
+                            <option value="OS3">OS3</option>
+                            <option value="OP1">OP1</option>
+                            <option value="CADRE1">CADRE1</option>
+                            <option value="CADRE2">CADRE2</option>
+                        </select>
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="position" class="formbold-form-label">Fonction</label>
+                        <input
+                                type="text"
+                                name="position"
+                                id="position"
+                                placeholder="Fonction"
+                                th:field="*{position}"
+                                class="formbold-form-input"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="hireDate" class="formbold-form-label">Date d'embauche</label>
+                        <input
+                                type="date"
+                                name="hireDate"
+                                id="hireDate"
+                                class="formbold-form-input"
+                                th:field="*{hireDate}"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="resignationDate" class="formbold-form-label">Date de départ</label>
+                        <input
+                                type="date"
+                                name="resignationDate"
+                                id="resignationDate"
+                                class="formbold-form-input"
+                                th:field="*{resignationDate}"
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="CNAPSNumber" class="formbold-form-label">Numéro CNAPS</label>
+                        <input
+                                type="text"
+                                id="CNAPSNumber"
+                                name="CNAPSNumber"
+                                th:field="*{CNAPSNumber}"
+                                placeholder="Numéro CNAPS"
+                                class="formbold-form-input"
+                                required
+                        />
+                    </div>
+
+                    <div class="formbold-mb-3">
+                        <label for="image" class="formbold-form-label">Photo d'identité</label>
+                        <input
+                                class="formbold-form-input formbold-form-file"
+                                type="file"
+                                id="image"
+                                name="image"
+                                th:field="*{image}"
+                                accept="image/*"
+                        />
+                    </div>
+
+                    <div class="add-button-container">
+                        <button class="formbold-btn" type="submit">Ajouter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="employees-link">
+            <a th:href="@{/}">Liste des employés</a>
+        </div>
+    </body>
+</html>

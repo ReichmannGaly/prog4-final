@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Employees</title>
+        <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    </head>
+    <body class="centered-body">
+        <div class="header-container" th:replace="fragments/header"></div>
+        <div class="container">
+            <form th:action="@{/employees/sort}" method="get" class="sort-form">
+                <div class="sort-container">
+                    <select name="sortOption" class="sort-option" onchange="handleSortOptionChange()">
+                        <option value="lastName">Nom</option>
+                        <option value="firstName">Prénom</option>
+                        <option value="fonction">Fonction</option>
+                        <option value="gender">Sexe</option>
+                        <option value="hireDate">Date d'embauche</option>
+                        <option value="resignationDate">Date de départ</option>
+                    </select>
+                    <div class="radio-input">
+                        <input type="radio" id="sortAsc" name="sortDirection" value="asc" checked>
+                        <label for="sortAsc">Croissant</label>
+                    </div>
+                    <div class="radio-input">
+                        <input type="radio" id="sortDesc" name="sortDirection" value="desc">
+                        <label for="sortDesc">Décroissant</label>
+                    </div>
+                    <div class="date-input">
+                        <label for="startDate">Date de début</label>
+                        <input type="date" id="startDate" name="startDate" style="display: none;">
+                        <label for="endDate">Date de fin</label>
+                        <input type="date" id="endDate" name="endDate" style="display: none;">
+                    </div>
+                    <button class="button" type="submit" style="margin-left: 20px">Trier</button>
+                    <button class="button" th:formaction="@{/employees/download-csv}" type="submit" style="margin-left: 20px">Trier et exporter vers csv</button>
+                </div>
+            </form>
+            <form class="sort-form" th:action="@{/employees/search}">
+                <div class="sort-container">
+                    <select name="sortOption" class="sort-option">
+                        <option value="none" selected>Option de recherche</option>
+                        <option value="lastName">Nom</option>
+                        <option value="firstName">Prénom</option>
+                    </select>
+
+                    <label for="searchInput"></label>
+                    <input class="search-input" id="searchInput" name="searchInput" placeholder="Rechercher">
+                    <button class="button" type="submit" style="margin-left: 20px">Rechercher</button>
+                </div>
+            </form>
+            <table class="styled-table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Sexe</th>
+                    <th>Numéro de téléphone</th>
+                    <th>Fonction</th>
+                    <th>Date d'embauche</th>
+                    <th>Date de départ</th>
+                    <th>Matricule</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="active-row"
+                    th:each="employee : ${employees}"
+                    th:attr="onclick='javascript:redirectToEmployeePage(\'' + ${employee.id} + '\')'">
+                    <td th:text="${employee.lastName}"></td>
+                    <td th:text="${employee.firstName}"></td>
+                    <td th:text="${employee.birthDate}"></td>
+                    <td th:text="${employee.gender}"></td>
+                    <td th:text="${employee.phoneNumbers}"></td>
+                    <td th:text="${employee.position}"></td>
+                    <td th:text="${employee.hireDate}"></td>
+                    <td th:text="${employee.resignationDate != null ? employee.resignationDate : '-'}"></td>
+                    <td th:text="${employee.ref}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <script src="/js/index.js"></script>
+    </body>
+</html>

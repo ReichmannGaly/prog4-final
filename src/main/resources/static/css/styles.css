@@ -1,0 +1,154 @@
+.centered-body {
+   text-align: center;
+}
+
+.styled-table {
+   border-collapse: collapse;
+   margin: 20px auto;
+   font-size: 0.9em;
+   font-family: sans-serif;
+   min-width: 1000px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   overflow: hidden;
+}
+
+.styled-table thead tr {
+   background-color: #009879;
+   color: #ffffff;
+   text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+   padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+   border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+   background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:hover {
+   background-color: #d4f9fc;
+   cursor: pointer;
+}
+
+.styled-table tbody tr:last-of-type {
+   border-bottom: 2px solid #009879;
+}
+
+.add-button {
+   appearance: none;
+   background-color: #009879;
+   border: 1px solid rgba(27, 31, 35, .15);
+   border-radius: 6px;
+   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+   box-sizing: border-box;
+   color: #fff;
+   cursor: pointer;
+   display: inline-block;
+   font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 20px;
+   padding: 6px 16px;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: middle;
+   white-space: nowrap;
+   margin-top: 15px;
+   margin-bottom: 20px;
+}
+
+.add-button:focus:not(:focus-visible):not(.focus-visible) {
+   box-shadow: none;
+   outline: none;
+}
+
+.add-button:hover {
+   background-color: #057a64;
+}
+
+.add-button:focus {
+   box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+   outline: none;
+}
+
+.add-button:disabled {
+   background-color: #94d3a2;
+   border-color: rgba(27, 31, 35, .1);
+   color: rgba(255, 255, 255, .8);
+   cursor: default;
+}
+
+.add-button:active {
+   background-color: #009879;
+   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.sort-option {
+   font-size: 16px;
+   padding: 8px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+.select-input {
+   font-size: 16px;
+   padding: 8px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+.sort-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   padding: 5px;
+}
+
+.sort-container {
+   display: flex;
+   align-items: center;
+}
+
+.sort-option {
+   margin-right: 10px;
+}
+
+.radio-input {
+   margin-right: 10px;
+   display: flex;
+   align-items: center;
+}
+
+.radio-input input[type="radio"] {
+   display: none;
+}
+
+.radio-input input[type="radio"]:checked + label {
+   color: #009879;
+   font-weight: bold;
+}
+
+.button {
+   background-color: #009879;
+   color: #fff;
+   padding: 10px 20px;
+   font-size: 16px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.button:hover {
+   background-color: #057a64;
+}
